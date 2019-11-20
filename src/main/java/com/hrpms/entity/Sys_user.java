@@ -23,6 +23,8 @@ public class Sys_user {
     private Date updateTime;//更新时间
     private String userNote;//备注
 
+
+
     public Sys_user() {
     }
 
