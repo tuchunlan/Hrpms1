@@ -1,5 +1,6 @@
 package com.hrpms.entity;
 
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -7,25 +8,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
-//系统用户实体类
+//系统角色表
 @Entity
-public class Sys_user {
-    private Integer id;//用户编号
-    private String username;//用户名称
-    private String password;//用户密码
-    private String email;//用户密码
-    private String phone;//手机
-    private Integer sortnum;//排序
-    private String status;//状态   0--正常  1---停用
-    private Integer createBy;//创建人
-    private Date createTime;//创建时间
-    private Integer updateBy;//更新者
-    private Date updateTime;//更新时间
-    private String userNote;//备注
+public class System_role {
+    private Integer id;                 //角色编号
+    private String roleName;            //角色名称
+    private Integer sortnum;            //排序
+    private String status;               //状态
+    private Integer createBy;           //创建者
+    private Date createTime;            //创建时间
+    private Integer updateBy;           //更新者
+    private Date updateTime;            //更新时间
+    private String roleNote;            //角色备注
 
+    public System_role() {
+    }
 
-
-    public Sys_user() {
+    public System_role(Integer id, String roleName, Integer sortnum, String status, Integer createBy, Date createTime, Integer updateBy, Date updateTime, String roleNote) {
+        this.id = id;
+        this.roleName = roleName;
+        this.sortnum = sortnum;
+        this.status = status;
+        this.createBy = createBy;
+        this.createTime = createTime;
+        this.updateBy = updateBy;
+        this.updateTime = updateTime;
+        this.roleNote = roleNote;
     }
 
     @Id
@@ -38,36 +46,12 @@ public class Sys_user {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public Integer getSortnum() {
@@ -120,11 +104,11 @@ public class Sys_user {
         this.updateTime = updateTime;
     }
 
-    public String getUserNote() {
-        return userNote;
+    public String getRoleNote() {
+        return roleNote;
     }
 
-    public void setUserNote(String userNote) {
-        this.userNote = userNote;
+    public void setRoleNote(String roleNote) {
+        this.roleNote = roleNote;
     }
 }
